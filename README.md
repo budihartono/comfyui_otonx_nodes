@@ -31,3 +31,5 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 **Functionality:** Users can define the data value and type for each of the five slots, ensuring accurate data type handling for downstream nodes.
 
 **Utility:** Provides a flexible input mechanism, eliminating the need for multiple single-value nodes.
+
+![OTX Versatile Multiple Inputs](https://github.com/budihartono/comfyui_otonx_nodes/blob/main/docs/img/otx_versatile_inputs.png?raw=true)
