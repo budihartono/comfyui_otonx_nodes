@@ -1,3 +1,5 @@
+import comfy.samplers
+
 # wildcard trick is taken from pythongossss's
 # I found it in Impact Pack's nodes
 class AnyType(str):
@@ -86,21 +88,22 @@ class OTX_KSampler_Feeder:
 	def INPUT_TYPES(self):
 		return {
 			"required": {
-				"seed_number": ("INT", {"default": 0, "min": 0, "max": 999999999999999, "step": 1, "display": "number"}),
+				"seed": ("INT", {"default": 0, "min": 0, "max": 999999999999999, "step": 1, "display": "number"}),
 				"steps": ("INT", {"default": 50, "min": 0, "max": 120, "step": 1, "display": "number"}),
 				"cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0, "step": 0.1, "display": "number"}),
+				"scheduler": (comfy.samplers.KSampler.SCHEDULERS, ),
 				"base_steps_portion": ("FLOAT", {"default": 0.8, "min": 0.0, "max": 1.0, "step": 0.1, "display": "number"}),
 			},
 		}
 
-	RETURN_TYPES = ("INT","INT","FLOAT","INT",)
+	RETURN_TYPES = ("INT","INT","FLOAT","INT",comfy.samplers.KSampler.SCHEDULERS,)
 
-	RETURN_NAMES = ("seed_number", "steps", "cfg", "base_end_at_step",)
+	RETURN_NAMES = ("seed", "steps", "cfg", "scheduler", "base_end_at_step",)
 
 	FUNCTION = "pass_parameters"
 
 	CATEGORY = "OtonxPack"
 
-	def pass_parameters(self, base_steps_portion, seed_number, steps, cfg):
+	def pass_parameters(self, base_steps_portion, seed, steps, cfg, scheduler):
 		base_end_at_step = int(steps * base_steps_portion)
-		return seed_number, steps, cfg, base_end_at_step
+		return seed, steps, cfg, scheduler, base_end_at_step

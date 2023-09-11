@@ -15,7 +15,7 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 ![KSampler (Advanced) Inputs](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa86bfe0f-60cf-4c64-bbc9-c2ed8b3b4beb_1417x355.png)
 
 **Outputs:**
-- **seed_number:** Interface for both Base KSampler and Refiner KSampler nodes.
+- **seed:** Interface for both Base KSampler and Refiner KSampler nodes.
 - **steps:** Maintains a consistent 'steps' value between the base and refiner samplers.
 - **cfg:** Allows identical cfg values to be set for both base and refiner samplers.
 - **base_steps_portion:** Outputs a value that can synchronize the `start_at_step` of the refiner with the `end_at_step` of the base.
