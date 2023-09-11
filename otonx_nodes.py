@@ -1,0 +1,117 @@
+# wildcard trick is taken from pythongossss's
+class AnyType(str):
+	def __ne__(self, __value: object) -> bool:
+		return False
+
+any_type = AnyType("*")
+
+class OTX_MultipleValues:
+
+	def __init__(self):
+		pass
+
+	@classmethod
+	def INPUT_TYPES(self):
+		return {
+			"required": {
+				"value_1": ("STRING", {"default": "", "multiline": True}),
+				"valuetype_1": (list(('int', 'float', 'string')),),
+				"value_2": ("STRING", {"default": "", "multiline": True}),
+				"valuetype_2": (list(('int', 'float', 'string')),),
+				"value_3": ("STRING", {"default": "", "multiline": True}),
+				"valuetype_3": (list(('int', 'float', 'string')),),
+				"value_4": ("STRING", {"default": "", "multiline": True}),
+				"valuetype_4": (list(('int', 'float', 'string')),),
+				"value_5": ("STRING", {"default": "", "multiline": True}),
+				"valuetype_5": (list(('int', 'float', 'string')),),
+			},
+		}
+	RETURN_TYPES = (any_type, any_type, any_type, any_type, any_type,)
+	RETURN_NAMES = ("value_1", "value_2", "value_3", "value_4", "value_5")
+
+	FUNCTION = "pass_parameters"
+
+	CATEGORY = "OtonxPack"
+
+	def pass_parameters(self, value_1, value_2, value_3, value_4, value_5, valuetype_1, valuetype_2, valuetype_3, valuetype_4, valuetype_5):
+		# Convert value_1 based on valuetype_1
+		if valuetype_1 == "INT":
+			value_1 = int(value_1)
+		elif valuetype_1 == "FLOAT":
+			value_1 = float(value_1)
+		elif valuetype_1 == "STRING":
+			value_1 = str(value_1)
+
+		# Convert value_2 based on valuetype_2
+		if valuetype_2 == "INT":
+			value_2 = int(value_2)
+		elif valuetype_2 == "FLOAT":
+			value_2 = float(value_2)
+		elif valuetype_2 == "STRING":
+			value_2 = str(value_2)
+
+		# Convert value_3 based on valuetype_3
+		if valuetype_3 == "INT":
+			value_3 = int(value_3)
+		elif valuetype_3 == "FLOAT":
+			value_3 = float(value_3)
+		elif valuetype_3 == "STRING":
+			value_3 = str(value_3)
+
+		# Convert value_4 based on valuetype_4
+		if valuetype_4 == "INT":
+			value_4 = int(value_4)
+		elif valuetype_4 == "FLOAT":
+			value_4 = float(value_4)
+		elif valuetype_4 == "STRING":
+			value_4 = str(value_4)
+
+		# Convert value_5 based on valuetype_5
+		if valuetype_5 == "INT":
+			value_5 = int(value_5)
+		elif valuetype_5 == "FLOAT":
+			value_5 = float(value_5)
+		elif valuetype_5 == "STRING":
+			value_5 = str(value_5)
+		return value_1, value_2, value_3, value_4, value_5
+
+
+class OTX_KSampler_Feeder:
+
+	def __init__(self):
+		pass
+
+	@classmethod
+	def INPUT_TYPES(self):
+		return {
+			"required": {
+				"seed_number": ("INT", {"default": 0, "min": 0, "max": 999999999999999, "step": 1, "display": "number"}),
+				"steps": ("INT", {"default": 50, "min": 0, "max": 120, "step": 1, "display": "number"}),
+				"cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0, "step": 0.1, "display": "number"}),
+				"base_steps_portion": ("FLOAT", {"default": 0.8, "min": 0.0, "max": 1.0, "step": 0.1, "display": "number"}),
+			},
+		}
+
+	RETURN_TYPES = ("INT","INT","FLOAT","INT",)
+
+	RETURN_NAMES = ("seed_number", "steps", "cfg", "base_end_at_step",)
+
+	FUNCTION = "pass_parameters"
+
+	CATEGORY = "OtonxPack"
+
+	def pass_parameters(self, base_steps_portion, seed_number, steps, cfg):
+		base_end_at_step = int(steps * base_steps_portion)
+		return seed_number, steps, cfg, base_end_at_step
+
+# ########################################################################################################################
+# # NODE MAPPING
+# NODE_CLASS_MAPPINGS = {
+# 	"OTX Multiple Values": OTX_MultipleValues,
+# 	"OTX KSampler Feeder" : OTX_KSampler_Feeder,
+# }
+
+# NODE_DISPLAY_NAME_MAPPINGS = {
+# 	"OTX Multiple Values": "OTX Multiple Values",
+# 	"OTX KSampler Feeder": "OTX KSampler Feeder",
+# }
