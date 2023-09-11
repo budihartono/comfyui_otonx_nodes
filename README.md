@@ -8,7 +8,11 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 
 ### OTX KSampler Feeder
 
-**Description:** Centralized value storage for input parameters intended for the KSampler (Advanced) nodes. Designed based on the workflow outlined in [Advanced SDXL Workflows in ComfyUI](https://followfoxai.substack.com/p/part-4-advanced-sdxl-workflows-in).
+**Description:** Centralized value storage for input parameters intended for the KSampler (Advanced) nodes. Designed based on the workflow outlined in [(Part 4) Advanced SDXL Workflows in ComfyUI](https://followfoxai.substack.com/i/136667610/changes-to-the-previous-workflow).
+
+![KSampler (Advanced) Inputs](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F07e38aa6-a492-474d-8c86-78b050bdec2b_1428x391.png)
+
+![KSampler (Advanced) Inputs](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa86bfe0f-60cf-4c64-bbc9-c2ed8b3b4beb_1417x355.png)
 
 **Outputs:**
 - **seed_number:** Interface for both Base KSampler and Refiner KSampler nodes.
