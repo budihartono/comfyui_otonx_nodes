@@ -32,4 +32,4 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 
 **Utility:** Provides a flexible input mechanism, eliminating the need for multiple single-value nodes.
 
-![OTX Versatile Multiple Inputs](https://github.com/budihartono/comfyui_otonx_nodes/blob/main/docs/img/otx_versatile_inputs.png?raw=true)
+![OTX Versatile Multiple Inputs](https://github.com/budihartono/comfyui_otonx_nodes/blob/main/docs/img/otx_versatile_inputs.png?raw=true  | width=300)
