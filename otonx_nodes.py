@@ -1,11 +1,12 @@
 # wildcard trick is taken from pythongossss's
+# I found it in Impact Pack's nodes
 class AnyType(str):
 	def __ne__(self, __value: object) -> bool:
 		return False
 
 any_type = AnyType("*")
 
-class OTX_MultipleValues:
+class OTX_VersatileMultipleInputs:
 
 	def __init__(self):
 		pass
@@ -103,15 +104,3 @@ class OTX_KSampler_Feeder:
 	def pass_parameters(self, base_steps_portion, seed_number, steps, cfg):
 		base_end_at_step = int(steps * base_steps_portion)
 		return seed_number, steps, cfg, base_end_at_step
-
-# ########################################################################################################################
-# # NODE MAPPING
-# NODE_CLASS_MAPPINGS = {
-# 	"OTX Multiple Values": OTX_MultipleValues,
-# 	"OTX KSampler Feeder" : OTX_KSampler_Feeder,
-# }
-
-# NODE_DISPLAY_NAME_MAPPINGS = {
-# 	"OTX Multiple Values": "OTX Multiple Values",
-# 	"OTX KSampler Feeder": "OTX KSampler Feeder",
-# }
