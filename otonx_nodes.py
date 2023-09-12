@@ -86,21 +86,21 @@ class OTX_KSampler_Feeder:
 	def INPUT_TYPES(self):
 		return {
 			"required": {
-				"seed_number": ("INT", {"default": 0, "min": 0, "max": 999999999999999, "step": 1, "display": "number"}),
-				"steps": ("INT", {"default": 50, "min": 0, "max": 120, "step": 1, "display": "number"}),
-				"cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0, "step": 0.1, "display": "number"}),
+				"noise_seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
+				"steps": ("INT", {"default": 20, "min": 1, "max": 10000}),
+                "cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0}),
 				"base_steps_portion": ("FLOAT", {"default": 0.8, "min": 0.0, "max": 1.0, "step": 0.1, "display": "number"}),
 			},
 		}
 
 	RETURN_TYPES = ("INT","INT","FLOAT","INT",)
 
-	RETURN_NAMES = ("seed_number", "steps", "cfg", "base_end_at_step",)
+	RETURN_NAMES = ("noise_seed", "steps", "cfg", "base_end_at_step",)
 
 	FUNCTION = "pass_parameters"
 
 	CATEGORY = "OtonxPack"
 
-	def pass_parameters(self, base_steps_portion, seed_number, steps, cfg):
+	def pass_parameters(self, base_steps_portion, noise_seed, steps, cfg):
 		base_end_at_step = int(steps * base_steps_portion)
-		return seed_number, steps, cfg, base_end_at_step
+		return noise_seed, steps, cfg, base_end_at_step
