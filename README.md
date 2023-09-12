@@ -15,9 +15,9 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 ![KSampler (Advanced) Inputs](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa86bfe0f-60cf-4c64-bbc9-c2ed8b3b4beb_1417x355.png)
 
 **Outputs:**
-- **seed:** Interface for both Base KSampler and Refiner KSampler nodes.
-- **steps:** Maintains a consistent 'steps' value between the base and refiner samplers.
-- **cfg:** Allows identical cfg values to be set for both base and refiner samplers.
+- **seed:** Allows identical `noise_seed` values for both Base KSampler and Refiner KSampler nodes.
+- **steps:** Maintains a consistent `steps` value between the base and refiner samplers.
+- **cfg:** Allows identical `cfg` values to be set for both base and refiner samplers.
 - **base_steps_portion:** Outputs a value that can synchronize the `start_at_step` of the refiner with the `end_at_step` of the base.
 
 **Utility:** Reduces the need for multiple primitive nodes containing singular values, centralizing configuration.
@@ -26,7 +26,7 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 
 ### OTX Versatile Multiple Inputs
 
-**Description:** A multi-input node allowing for the definition of up to five values, each accompanied by its data type specification (INT, FLOAT, or STRING).
+**Description:** A user-defined inputs node allowing for the definition of up to five values, each accompanied by its data type specification (INT, FLOAT, or STRING).
 
 **Functionality:** Users can define the data value and type for each of the five slots, ensuring accurate data type handling for downstream nodes.
 
