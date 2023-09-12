@@ -24,13 +24,30 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 
 ---
 
+### OTX Integer Multiple Inputs
+
+**Description:** This node series is specialized for receiving multiple integer inputs, optimizing data input processes while ensuring consistent data type integration.
+
+**Functionality:** The node provides several slots, each designed to accept integer values. Users have the flexibility to manually set each slot by directly typing in the integer values, streamlining the input process or connecting the inputs or outputs to other nodes,. Each slot acts as a dedicated integer input that can be seamlessly connected to downstream nodes.
+
+**Utility:** It streamlines node setups by consolidating multiple integer input slots into a single node, reducing the need for individual integer nodes.
+
+- **OTX Integer Multiple Inputs 4:** Features a 4-slot configuration for integer inputs.
+- **OTX Integer Multiple Inputs 5:** Features a 5-slot configuration for integer inputs.
+- **OTX Integer Multiple Inputs 6:** Features a 6-slot configuration for integer inputs.
+
+---
+
 ### OTX Versatile Multiple Inputs
 
-**Description:** A user-defined inputs node allowing for the definition of up to five values, each accompanied by its data type specification (INT, FLOAT, or STRING).
+**Description:** A dynamic node series designed for diverse data input configurations. It can accommodate varying data types, granting users the flexibility to define and manage multiple data inputs within a singular node.
 
-**Functionality:** Users can define the data value and type for each of the five slots, ensuring accurate data type handling for downstream nodes.
+**Functionality:** Each slot within the node, implemented as a multiline textbox to handle longer strings, can be configured to accept one of three data types: INT, FLOAT, or STRING. In addition to connecting the inputs or outputs to other nodes, users can manually set data by typing into the multiline textboxes, ensuring both the value and its type are correctly configured for downstream processing.
 
-**Utility:** Provides a flexible input mechanism, eliminating the need for multiple single-value nodes.
+**Utility:** This node series offers an integrated platform for diverse data inputs, negating the need for multiple nodes dedicated to distinct data types.
+
+- **OTX Versatile Multiple Inputs 4:** A 4-slot design, where each multiline textbox slot is configurable to INT, FLOAT, or STRING.
+- **OTX Versatile Multiple Inputs 5:** A 5-slot design, where each multiline textbox slot is configurable to INT, FLOAT, or STRING.
+- **OTX Versatile Multiple Inputs 6:** A 6-slot design, where each multiline textbox slot is configurable to INT, FLOAT, or STRING.
 
 <img src="https://github.com/budihartono/comfyui_otonx_nodes/blob/main/docs/img/otx_versatile_inputs.png" width="40%" height="40%">
-
