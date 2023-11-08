@@ -4,6 +4,13 @@ Repository: Otonx's Custom Nodes for ComfyUI.
 
 **Note:** Nodes in this repository are subject to intermittent changes. Please review and test nodes thoroughly prior to integration.
 
+**Installation**
+
+To install the custom nodes, you can follow the following steps:
+- cd custom_nodes
+- git clone https://github.com/budihartono/comfyui_otonx_nodes.git
+- Restart ComfyUI
+
 ---
 
 ### OTX KSampler Feeder
