@@ -2,7 +2,7 @@
 name = "comfyui_otonx_nodes"
 description = "The OTX classes pass multiple inputs of varying types, convert them as needed, and return the results, with some performing custom calculations"
 version = "1.0.0"
-license = "LICENSE"
+license = { file = "LICENSE" }
 
 [project.urls]
 Repository = "https://github.com/budihartono/comfyui_otonx_nodes"
